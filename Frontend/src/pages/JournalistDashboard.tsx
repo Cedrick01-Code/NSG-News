@@ -60,18 +60,18 @@ export default function JournalistDashboard() {
   const [newArticle, setNewArticle] = useState({ title: '', category: 'Rwanda', content: '', excerpt: '' });
   const [saved, setSaved] = useState(false);
 
-  if (!user || user.role === 'reader') {
-    return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg)' }}>
-        <div className="text-center">
-          <div className="text-5xl mb-4">🔒</div>
-          <h2 className="font-display text-xl font-bold mb-2" style={{ color: 'var(--fg)' }}>Access Restricted</h2>
-          <p className="text-sm mb-5" style={{ color: 'var(--fg-muted)' }}>Sign in with a journalist account to access this dashboard.</p>
-          <button onClick={() => navigate('home')} className="px-5 py-2.5 bg-nsg-red text-white font-bold rounded-xl text-sm">Back to Home</button>
-        </div>
-      </div>
-    );
-  }
+if (!user || (user.role !== 'journalist' && user.role !== 'editor')) {
+     return (
+       <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg)' }}>
+         <div className="text-center">
+           <div className="text-5xl mb-4">🔒</div>
+           <h2 className="font-display text-xl font-bold mb-2" style={{ color: 'var(--fg)' }}>Access Restricted</h2>
+           <p className="text-sm mb-5" style={{ color: 'var(--fg-muted)' }}>Sign in with a journalist or editor account to access this dashboard.</p>
+           <button onClick={() => navigate('home')} className="px-5 py-2.5 bg-nsg-red text-white font-bold rounded-xl text-sm">Back to Home</button>
+         </div>
+       </div>
+     );
+   }
 
   const filteredArticles = articleStatus === 'all'
     ? journalistArticles
@@ -144,12 +144,11 @@ export default function JournalistDashboard() {
           {/* OVERVIEW */}
           {section === 'overview' && (
             <div className="space-y-6">
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                <StatCard label="Total Views" value={`${(journalistStats.totalViews / 1000).toFixed(0)}K`} growth={12.4} icon="👁️" />
-                <StatCard label="Followers"   value={journalistStats.followers.toLocaleString()} growth={8.2} icon="👥" />
-                <StatCard label="Articles"    value={journalistStats.articles.toString()}         growth={4.1} icon="📄" />
-                <StatCard label="Engagement"  value={`${journalistStats.engagementRate}%`}        growth={2.1} icon="💬" />
-              </div>
+<div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                 <StatCard label="Total Views" value={`${(journalistStats.totalViews / 1000).toFixed(0)}K`} growth={12.4} icon="👁️" />
+                 <StatCard label="Articles"    value={journalistStats.articles.toString()}         growth={4.1} icon="📄" />
+                 <StatCard label="Engagement"  value={`${journalistStats.engagementRate}%`}        growth={2.1} icon="💬" />
+               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="rounded-2xl p-5" style={{ background: 'var(--bg-card)', border: '1px solid var(--border-color)' }}>

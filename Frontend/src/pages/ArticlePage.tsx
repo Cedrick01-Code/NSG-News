@@ -263,9 +263,9 @@ export default function ArticlePage({ slug }: { slug: string }) {
                 {article.author.name}
                 {article.author.verified && <span className="text-nsg-red ml-1.5 text-sm">✓ Verified</span>}
               </div>
-              <div className="text-xs mb-2 font-mono-nsg" style={{ color: 'var(--fg-muted)' }}>
-                {article.author.followers.toLocaleString()} followers · {article.author.articles} articles
-              </div>
+<div className="text-xs mb-2 font-mono-nsg" style={{ color: 'var(--fg-muted)' }}>
+                 {article.author.articles} articles
+               </div>
               <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>{article.author.bio}</p>
             </div>
           </div>
@@ -340,15 +340,7 @@ export default function ArticlePage({ slug }: { slug: string }) {
             </div>
           </div>
 
-          {/* Follow author */}
-          <div className="rounded-2xl p-5 text-center" style={{ background: 'var(--bg-card)', border: '1px solid var(--border-color)' }}>
-            <img src={article.author.avatar} alt={article.author.name} className="w-14 h-14 rounded-full object-cover mx-auto mb-3" />
-            <div className="font-semibold mb-0.5" style={{ color: 'var(--fg)' }}>{article.author.name}</div>
-            <div className="text-xs mb-3" style={{ color: 'var(--fg-muted)' }}>{article.author.followers.toLocaleString()} followers</div>
-            <button className="w-full py-2 bg-nsg-red hover:bg-nsg-red-dark text-white text-sm font-bold rounded-xl transition-colors">
-              Follow Author
-            </button>
-          </div>
+
         </aside>
       </div>
     </div>

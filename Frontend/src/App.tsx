@@ -7,13 +7,10 @@ import HomePage from './pages/HomePage';
 import ArticlePage from './pages/ArticlePage';
 import CategoryPage from './pages/CategoryPage';
 import SearchPage from './pages/SearchPage';
-import LivePage from './pages/LivePage';
-import VideosPage from './pages/VideosPage';
 import JournalistDashboard from './pages/JournalistDashboard';
 import EditorDashboard from './pages/EditorDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import ProfilePage from './pages/ProfilePage';
-import PricingPage from './pages/PricingPage';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -170,19 +167,16 @@ function Router() {
   const isDash = ['journalist', 'editor', 'admin'].includes(page);
 
   const renderPage = () => {
-    switch (page) {
-      case 'article':    return <ArticlePage   slug={pageParams.slug || ''} />;
-      case 'category':   return <CategoryPage  slug={pageParams.slug || 'rwanda'} />;
-      case 'search':     return <SearchPage    query={pageParams.q || ''} />;
-      case 'live':       return <LivePage />;
-      case 'videos':     return <VideosPage />;
-      case 'journalist': return <JournalistDashboard />;
-      case 'editor':     return <EditorDashboard />;
-      case 'admin':      return <AdminDashboard />;
-      case 'profile':    return <ProfilePage />;
-      case 'pricing':    return <PricingPage />;
-      default:           return <HomePage />;
-    }
+switch (page) {
+       case 'article':    return <ArticlePage   slug={pageParams.slug || ''} />;
+       case 'category':   return <CategoryPage  slug={pageParams.slug || 'rwanda'} />;
+       case 'search':     return <SearchPage    query={pageParams.q || ''} />;
+       case 'journalist': return <JournalistDashboard />;
+       case 'editor':     return <EditorDashboard />;
+       case 'admin':      return <AdminDashboard />;
+       case 'profile':    return <ProfilePage />;
+       default:           return <HomePage />;
+     }
   };
 
   return (

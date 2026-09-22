@@ -1,13 +1,12 @@
 export interface Author {
-  id: string;
-  name: string;
-  role: 'journalist' | 'editor' | 'admin';
-  avatar: string;
-  bio: string;
-  followers: number;
-  articles: number;
-  verified: boolean;
-}
+   id: string;
+   name: string;
+   avatar: string;
+   bio: string;
+   role: 'journalist' | 'editor' | 'admin';
+   articles: number;
+   verified: boolean;
+ }
 
 export interface Article {
   id: string;
@@ -88,57 +87,63 @@ export const authors: Author[] = [
   {
     id: 'a1', name: 'Amara Nkosi', role: 'journalist',
     avatar: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&h=80&fit=crop&auto=format',
-    bio: 'Senior political correspondent covering East Africa. Based in Kigali.',
-    followers: 12400, articles: 287, verified: true,
-  },
+bio: 'Senior political correspondent covering East Africa. Based in Kigali.',
+     articles: 287,
+     verified: true,
+   },
   {
     id: 'a2', name: 'Jean-Pierre Hakizimana', role: 'journalist',
     avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop&auto=format',
-    bio: 'Technology and innovation journalist based in Kigali. Former software engineer.',
-    followers: 8900, articles: 154, verified: true,
-  },
+bio: 'Technology and innovation journalist based in Kigali. Former software engineer.',
+     articles: 154,
+     verified: true,
+   },
   {
     id: 'a3', name: 'Fatima Al-Rashid', role: 'journalist',
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&auto=format',
-    bio: 'Business and economics reporter with 12 years of experience in African markets.',
-    followers: 6200, articles: 201, verified: true,
-  },
+bio: 'Business and economics reporter with 12 years of experience in African markets.',
+     articles: 201,
+     verified: true,
+   },
   {
     id: 'a4', name: 'Emmanuel Uwimana', role: 'editor',
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&auto=format',
-    bio: 'Chief Editor, Rwanda Desk. Former BBC Africa correspondent.',
-    followers: 19800, articles: 89, verified: true,
-  },
+bio: 'Chief Editor, Rwanda Desk. Former BBC Africa correspondent.',
+     articles: 89,
+     verified: true,
+   },
   {
     id: 'a5', name: 'Sophie Kamau', role: 'journalist',
     avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&h=80&fit=crop&auto=format',
-    bio: 'Health and science correspondent for East Africa. PhD in Public Health, University of Nairobi.',
-    followers: 5400, articles: 178, verified: true,
-  },
+bio: 'Health and science correspondent for East Africa. PhD in Public Health, University of Nairobi.',
+     articles: 178,
+     verified: true,
+   },
   {
     id: 'a6', name: 'Claude Niyonzima', role: 'journalist',
     avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&auto=format',
-    bio: 'Sports desk lead, specializing in Rwandan and East African football.',
-    followers: 9200, articles: 312, verified: true,
-  },
+bio: 'Sports desk lead, specializing in Rwandan and East African football.',
+     articles: 312,
+     verified: true,
+   },
 ];
 
 // ─── Categories ─────────────────────────────────────────────────────────────
 
 export const categories: Category[] = [
-  { id: 'c1', name: 'Rwanda', slug: 'rwanda', color: '#1B2A4A', icon: '🇷🇼', description: 'News from across Rwanda — national, provincial, and local.' },
-  { id: 'c2', name: 'Africa', slug: 'africa', color: '#CC1219', icon: '🌍', description: 'Pan-African coverage: politics, economy, culture, and development.' },
-  { id: 'c3', name: 'World', slug: 'world', color: '#374151', icon: '🌐', description: 'International news and global affairs.' },
-  { id: 'c4', name: 'Politics', slug: 'politics', color: '#7C3AED', icon: '🏛️', description: 'Political news, governance, and policy.' },
-  { id: 'c5', name: 'Business', slug: 'business', color: '#059669', icon: '📈', description: 'Markets, economy, investment, and entrepreneurship.' },
-  { id: 'c6', name: 'Technology', slug: 'technology', color: '#0284C7', icon: '💻', description: 'Tech news, startups, and digital transformation.' },
-  { id: 'c7', name: 'Sports', slug: 'sports', color: '#DC2626', icon: '⚽', description: 'Rwandan sports, AFCON, and global athletics.' },
-  { id: 'c8', name: 'Entertainment', slug: 'entertainment', color: '#9333EA', icon: '🎬', description: 'Music, film, arts, and culture.' },
-  { id: 'c9', name: 'Health', slug: 'health', color: '#16A34A', icon: '🏥', description: 'Public health, medicine, and wellness.' },
-  { id: 'c10', name: 'Science', slug: 'science', color: '#0891B2', icon: '🔬', description: 'Scientific research, discovery, and innovation.' },
-  { id: 'c11', name: 'Education', slug: 'education', color: '#CA8A04', icon: '📚', description: 'Schools, universities, and learning in Africa.' },
-  { id: 'c12', name: 'Local', slug: 'local', color: '#EA580C', icon: '📍', description: 'Kigali and provincial news from across Rwanda.' },
-];
+   { id: 'c1', name: 'Rwanda', slug: 'rwanda', color: '#1B2A4A', icon: '🇷🇼', description: 'News from across Rwanda — national, provincial, and local.' },
+   { id: 'c2', name: 'Africa', slug: 'africa', color: '#CC1219', icon: '🌍', description: 'Pan-African coverage: politics, economy, culture, and development.' },
+   { id: 'c3', name: 'World', slug: 'world', color: '#374151', icon: '🌐', description: 'International news and global affairs.' },
+   { id: 'c4', name: 'Politics', slug: 'politics', color: '#7C3AED', icon: '🏛️', description: 'Political news, governance, and policy.' },
+   { id: 'c5', name: 'Business', slug: 'business', color: '#059669', icon: '📈', description: 'Markets, economy, investment, and entrepreneurship.' },
+   { id: 'c6', name: 'Technology', slug: 'technology', color: '#0284C7', icon: '🔧', description: 'Tech news, startups, and digital transformation.' },
+   { id: 'c7', name: 'Sports', slug: 'sports', color: '#DC2626', icon: '🏀', description: 'Rwandan sports, AFCON, and global athletics.' },
+   { id: 'c8', name: 'Entertainment', slug: 'entertainment', color: '#9333EA', icon: '🎭', description: 'Music, film, arts, and culture.' },
+   { id: 'c9', name: 'Health', slug: 'health', color: '#16A34A', icon: '🏥', description: 'Public health, medicine, and wellness.' },
+   { id: 'c10', name: 'Science', slug: 'science', color: '#0891B2', icon: '🔬', description: 'Scientific research, discovery, and innovation.' },
+   { id: 'c11', name: 'Education', slug: 'education', color: '#CA8A04', icon: '📚', description: 'Schools, universities, and learning in Africa.' },
+   { id: 'c12', name: 'Local', slug: 'local', color: '#EA580C', icon: '📍', description: 'Kigali and provincial news from across Rwanda.' },
+ ];
 
 // ─── Breaking News ───────────────────────────────────────────────────────────
 
@@ -390,7 +395,7 @@ export const liveEvents: LiveEvent[] = [
       { id: 'u3', time: '09:55', content: "Rwanda's Minister of ICT addresses delegates: \"We have been building this architecture for years. Today, Africa plugs in.\"", type: 'text', author: 'Jean-Pierre Hakizimana' },
       { id: 'u4', time: '09:30', content: 'Summit resumes after morning break. Discussion turns to the Pan-African Digital Identity System implementation timeline and governance structure.', type: 'text', author: 'Amara Nkosi' },
       { id: 'u5', time: '08:45', content: 'Opening session begins with all 54 heads of delegation present — the first time all AU member states have attended a digital summit at ministerial level.', type: 'text', author: 'Jean-Pierre Hakizimana' },
-      { id: 'u6', time: '08:00', content: 'Day 2 of the summit begins. Live coverage starts now. Follow this page for real-time updates from Addis Ababa.', type: 'alert', author: 'NSG Desk' },
+      { id: 'u6', time: '08:00', content: 'Day 2 of the summit begins. Live coverage starts now. Get real-time updates from Addis Ababa.', type: 'alert', author: 'NSG Desk' },
     ],
   },
   {
@@ -471,7 +476,7 @@ export const categoryBreakdown = [
 // ─── Journalist dashboard data ────────────────────────────────────────────────
 
 export const journalistStats = {
-  totalViews: 284700, followers: 8900, articles: 154, engagementRate: 4.8,
+   totalViews: 284700, articles: 154, engagementRate: 4.8,
 };
 
 export const journalistArticles = [

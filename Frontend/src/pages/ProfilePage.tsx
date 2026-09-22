@@ -53,54 +53,24 @@ export default function ProfilePage() {
             )}
           </div>
 
-          {/* Stats */}
-          <div className="rounded-2xl p-5" style={{ background: 'var(--bg-card)', border: '1px solid var(--border-color)' }}>
-            <h3 className="font-semibold text-sm mb-4" style={{ color: 'var(--fg)' }}>Activity</h3>
-            <div className="space-y-3">
-              {[
-                { label: 'Articles Read', value: 142 },
-                { label: 'Saved Articles', value: bookmarks.length },
-                { label: 'Comments Posted', value: 8 },
-                { label: 'Following', value: 5 },
-              ].map(stat => (
-                <div key={stat.label} className="flex justify-between text-sm">
-                  <span style={{ color: 'var(--fg-muted)' }}>{stat.label}</span>
-                  <span className="font-bold" style={{ color: 'var(--fg)' }}>{stat.value}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+{/* Stats */}
+           <div className="rounded-2xl p-5" style={{ background: 'var(--bg-card)', border: '1px solid var(--border-color)' }}>
+             <h3 className="font-semibold text-sm mb-4" style={{ color: 'var(--fg)' }}>Activity</h3>
+             <div className="space-y-3">
+               {[
+                 { label: 'Articles Read', value: 142 },
+                 { label: 'Saved Articles', value: bookmarks.length },
+                 { label: 'Comments Posted', value: 8 },
+               ].map(stat => (
+                 <div key={stat.label} className="flex justify-between text-sm">
+                   <span style={{ color: 'var(--fg-muted)' }}>{stat.label}</span>
+                   <span className="font-bold" style={{ color: 'var(--fg)' }}>{stat.value}</span>
+                 </div>
+               ))}
+             </div>
+           </div>
 
-          {/* Following categories */}
-          <div className="rounded-2xl p-5" style={{ background: 'var(--bg-card)', border: '1px solid var(--border-color)' }}>
-            <h3 className="font-semibold text-sm mb-4" style={{ color: 'var(--fg)' }}>Following Categories</h3>
-            <div className="flex flex-wrap gap-2">
-              {categories.slice(0, 5).map(cat => (
-                <button key={cat.id} onClick={() => navigate('category', { slug: cat.slug })}
-                  className="flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium border hover:border-nsg-red hover:text-nsg-red transition-colors"
-                  style={{ borderColor: 'var(--border-color)', color: 'var(--fg-muted)' }}>
-                  {cat.icon} {cat.name}
-                </button>
-              ))}
-            </div>
-          </div>
 
-          {/* Following journalists */}
-          <div className="rounded-2xl p-5" style={{ background: 'var(--bg-card)', border: '1px solid var(--border-color)' }}>
-            <h3 className="font-semibold text-sm mb-4" style={{ color: 'var(--fg)' }}>Following Journalists</h3>
-            <div className="space-y-3">
-              {authors.slice(0, 3).map(author => (
-                <div key={author.id} className="flex items-center gap-3">
-                  <img src={author.avatar} alt={author.name} className="w-8 h-8 rounded-full object-cover" />
-                  <div className="flex-1 min-w-0">
-                    <div className="text-sm font-medium truncate" style={{ color: 'var(--fg)' }}>{author.name}</div>
-                    <div className="text-xs" style={{ color: 'var(--fg-muted)' }}>{author.articles} articles</div>
-                  </div>
-                  <button className="text-xs px-2.5 py-1 rounded-full bg-nsg-red text-white font-semibold">Following</button>
-                </div>
-              ))}
-            </div>
-          </div>
 
           {/* Notification settings */}
           <div className="rounded-2xl p-5" style={{ background: 'var(--bg-card)', border: '1px solid var(--border-color)' }}>
